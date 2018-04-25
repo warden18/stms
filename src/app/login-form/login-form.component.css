@@ -1,0 +1,33 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    align-items: center;
+    background-color: green;
+    height: 200px;
+    justify-content: space-around;
+}
+
+.login-form .login-title {
+	color: white;
+}
+
+.login-form input {
+	height: 30px;
+	border-radius: 4px;
+}
+
+.login-form input.ng-touched.ng-invalid{
+ border-color: red;
+}
+
+.login-form button {
+	background-color: #007bff;
+	border-color: #007bff;
+	font-weight: 400;
+	display: inline-block;
+	text-align: center;
+	padding: .375rem .75rem;
+	color: white;
+	border-radius: 4px;
+}
