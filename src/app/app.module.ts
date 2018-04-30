@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
-import { AppRoutingModule }     from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module'
+import { UserService } from "./user.service";
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { AppRoutingModule }     from './app-routing.module'
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
