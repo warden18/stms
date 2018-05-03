@@ -16,6 +16,10 @@ export class WelcomePageComponent implements OnInit {
 
   ngOnInit() {
   	this.username = this.userService.getUsername();
+
+    if (!this.username) {
+      this.router.navigate([ 'login' ]);
+    }
   }
 
   logOut(): void {
