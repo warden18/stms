@@ -1,7 +1,8 @@
 .nav {
-	border-bottom: 1px solid lightgray;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .nav .log-out {
@@ -14,20 +15,23 @@
 }
 
 .container {
+	overflow: hidden;
 	height: 98vh;
 }
 
 [draggable="true"] {
 	cursor: move;
-	border: 1px solid lightgray;
-	padding: 5px;
 }
 
 .user-container {
-	position: relative;
-	left: 50%;
+	display: flex;
+	justify-content: center;
 }
 
-.user-container .username {
-	top: 50px;
+.user-container #username {
+	margin-top: 5px;
+}
+
+.user-container #user-img {
+	top: 10px;
 }

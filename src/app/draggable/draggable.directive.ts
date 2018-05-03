@@ -9,7 +9,6 @@ export class DraggableDirective implements OnDestroy {
   constructor(el: ElementRef) {
     this.nativeEl = el.nativeElement;
 
-    this.nativeEl.setAttribute('id', Math.random());
 		this.nativeEl.style.position = 'absolute';
 		this.nativeEl.setAttribute('draggable', true);
 		this.nativeEl.addEventListener('dragstart', this.dragstart, false);
@@ -17,11 +16,11 @@ export class DraggableDirective implements OnDestroy {
 
   private dragstart(event: any): void {
   	const style = window.getComputedStyle(event.target, null);
-    const xCoord = parseInt(style.getPropertyValue('left'), 10) - event.clientX;
-    const yCoord = parseInt(style.getPropertyValue('top'), 10) - event.clientY;
-    const draggedElementId = event.target.id;
+    const xOffset = parseInt(style.getPropertyValue('left'), 10) - event.clientX;
+    const yOffset = parseInt(style.getPropertyValue('top'), 10) - event.clientY;
+    const elementId = event.target.id;
 
-    event.dataTransfer.setData('text/plain', `${xCoord},${yCoord},${draggedElementId}`);
+    event.dataTransfer.setData('text/plain', JSON.stringify({ xOffset, yOffset, elementId }));
   }
 
   public ngOnDestroy(): void {

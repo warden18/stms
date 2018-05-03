@@ -19,13 +19,11 @@ export class DroppableDirective {
   }
 
   private drop(event: any): Boolean {
-    const data = event.dataTransfer.getData('text/plain').split(',');
-    const offsetX = data[0];
-    const offsetY = data[1];
-    const elementId = data[2];
-    const element = document.getElementById(elementId);
-    element.style.left = (event.clientX + parseInt(offsetX, 10)) + 'px';
-    element.style.top = (event.clientY + parseInt(offsetY, 10)) + 'px';
+    const data = JSON.parse(event.dataTransfer.getData('text/plain'));
+    const element = document.getElementById(data.elementId);
+    element.style.left = (event.clientX + parseInt(data.xOffset, 10)) + 'px';
+    element.style.top = (event.clientY + parseInt(data.yOffset, 10)) + 'px';
+    event.preventDefault();
     return false;
   }
 

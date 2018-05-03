@@ -15,6 +15,10 @@ export class LoginFormComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder, private userService: UserService) {}
 
   ngOnInit() {
+    //TODO: use coords to show previous location of username and user image.
+    const usernameCoords = localStorage.getItem('usernameCoords');
+    const userImgCoords = localStorage.getItem('userImgCoords');
+
   	this.loginForm = this.fb.group({
    		username: ['', [
    			Validators.required,
