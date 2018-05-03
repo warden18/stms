@@ -28,11 +28,10 @@ export class WelcomePageComponent implements OnInit {
   logOut(): void {
       localStorage.clear();
 
-  		const usernameCoords = this.usernameEl.nativeElement.getBoundingClientRect();
-      const userImgCoords = this.userImg.nativeElement.getBoundingClientRect();
-
-      localStorage.setItem('usernameCoords', JSON.stringify(usernameCoords));
-      localStorage.setItem('userImgCoords', JSON.stringify(userImgCoords));
+  		//const usernameCoords = this.usernameEl.nativeElement.getBoundingClientRect();
+      //const userImgCoords = this.userImg.nativeElement.getBoundingClientRect();
+      //localStorage.setItem('usernameCoords', JSON.stringify(usernameCoords));
+      //localStorage.setItem('userImgCoords', JSON.stringify(userImgCoords));
   		this.router.navigate([ 'login' ]);
   }
 }
