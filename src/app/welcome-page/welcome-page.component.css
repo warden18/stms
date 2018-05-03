@@ -34,4 +34,6 @@
 
 .user-container #user-img {
 	top: 10px;
+	border: 1px solid lightgray;
+	padding: 5px;
 }
