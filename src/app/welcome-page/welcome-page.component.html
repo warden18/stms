@@ -1,10 +1,11 @@
-<div class="container">
+<div appDroppable class="container">
 	<nav class="nav">
 		<button class="log-out" (click)="logOut()">log out</button>
 	</nav>
 
-	<div class="flex-container">
-		<h2>Welcome, <p class="username" appDraggable>{{username}}!</p></h2>
-		<img appDraggable src="assets/user.png" alt="">
+
+	<div>
+		<p appDraggable id="1">{{username}}</p>
+		<img appDraggable src="assets/user.png" style="left: 50px;"  id="2" alt="">
 	</div>
 </div>

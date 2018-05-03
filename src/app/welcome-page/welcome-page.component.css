@@ -8,7 +8,7 @@
 }
 
 .container {
-	height: 94vh;
+	height: 98vh;
 }
 
 .flex-container {
@@ -16,7 +16,7 @@
 	justify-content: center;
 }
 
-.flex-container img {
-	margin-left: 10px;
+img {
 	align-self: center;
 }
+

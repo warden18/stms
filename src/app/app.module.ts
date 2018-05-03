@@ -13,13 +13,15 @@ import { UserService } from "./user.service";
 
 import {MatButtonModule, MatInputModule} from '@angular/material';
 import { DraggableDirective } from './draggable/draggable.directive';
+import { DroppableDirective } from './droppable/droppable.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     WelcomePageComponent,
-    DraggableDirective
+    DraggableDirective,
+    DroppableDirective
   ],
   imports: [
     BrowserModule,
