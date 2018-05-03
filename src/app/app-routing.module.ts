@@ -9,7 +9,8 @@ import { LoginRouteGuardService } from './login-route-guard.service';
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'authenticated', component: WelcomePageComponent, canActivate: [ LoginRouteGuardService ] },
-  { path: '',  redirectTo: '/login', pathMatch: 'full' }
+  { path: '',  redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
