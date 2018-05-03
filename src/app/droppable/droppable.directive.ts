@@ -4,10 +4,13 @@ import { Directive, ElementRef } from '@angular/core';
   selector: '[appDroppable]'
 })
 export class DroppableDirective {
+	private nativeEl: any;
 
-  constructor(el: ElementRef) {
-		el.nativeElement.addEventListener('dragover',this.dragover, false); 
-    el.nativeElement.addEventListener('drop', this.drop, false); 
+  constructor(el: ElementRef) {	
+  	this.nativeEl = el.nativeElement;
+
+		this.nativeEl.addEventListener('dragover',this.dragover, false); 
+    this.nativeEl.addEventListener('drop', this.drop, false); 
   }
 
   private dragover(event: any): Boolean {
@@ -22,5 +25,10 @@ export class DroppableDirective {
     element.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
     event.preventDefault();
     return false;
+  }
+
+  public ngOnDestroy(): void {
+    this.nativeEl.removeEventListener('dragover', this.dragover, false);
+    this.nativeEl.removeEventListener('drop', this.drop, false);
   }
 }

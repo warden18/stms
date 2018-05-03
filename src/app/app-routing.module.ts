@@ -4,10 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { LoginRouteGuardService } from './login-route-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
-  { path: 'authenticated', component: WelcomePageComponent },
+  { path: 'authenticated', component: WelcomePageComponent, canActivate: [ LoginRouteGuardService ] },
   { path: '',  redirectTo: '/login', pathMatch: 'full' }
 ];
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes)
   ],
-  exports: [ RouterModule ]
+  exports: [ RouterModule ],
+  providers: [ LoginRouteGuardService ]
 })
 export class AppRoutingModule { }

@@ -1,7 +1,12 @@
-<form class="login-form" [formGroup]="loginForm">
+<form class="login-form" [formGroup]="loginForm" (keyup.enter)="logIn(username.value, password.value)">
 	<h2 class="login-title">Login</h2>
 	<input #username type="text" formControlName="username" placeholder="Username">
 	<input #password type="password" formControlName="password" placeholder="Password">
-	<button class="login-button" type="button" [disabled]="loginForm.pristine || loginForm.invalid" (click)="logIn(username.value, password.value)"> Let me in.</button>
+	<button class="login-button" 
+					type="button" 
+					[disabled]="loginForm.pristine || loginForm.invalid" 
+					(click)="logIn(username.value, password.value)"> 
+				Let me in.
+	</button>
 </form>
 
