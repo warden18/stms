@@ -11,12 +11,6 @@
 	height: 98vh;
 }
 
-.flex-container {
-	display: flex;
-	justify-content: center;
+[draggable="true"] {
+	cursor: move;
 }
-
-img {
-	align-self: center;
-}
-
