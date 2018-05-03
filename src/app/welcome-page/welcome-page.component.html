@@ -3,6 +3,8 @@
 		<button class="log-out" (click)="logOut()">log out</button>
 	</nav>
 
-	<h3 appDraggable>{{username}}</h3>
-	<img appDraggable src="assets/user.png" style="left: 50px" alt="">
+	<div class="user-container">
+		<h3 class="username" appDraggable>{{username}}</h3>
+		<img appDraggable src="assets/user.png" alt="">
+	</div>
 </div>

@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 
 interface IUser {
 	username: string,
@@ -11,11 +13,15 @@ export class UserService {
   constructor() { }
 
   saveUser(user: IUser): void {
-  	localStorage.setItem("username", user.username);
-    localStorage.setItem("password", user.password);
+  	localStorage.setItem('username', user.username);
+    localStorage.setItem('password', user.password);
   }
 
-  getUsername(): string {
-		return localStorage.getItem("username");
+  getUsername(): Observable<string> {
+		return of(localStorage.getItem('username'));
+  }
+
+  isAuthenticated(): Observable<boolean> {
+    return of(Boolean(localStorage.getItem('username'))).pipe()
   }
 }
