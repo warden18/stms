@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
-import { UserService } from "../user.service";
+import { UserService } from "../user-service/user.service";
 
 @Component({
   selector: 'app-welcome-page',

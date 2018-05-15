@@ -4,13 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
-import { LoginRouteGuardService } from './login-route-guard.service';
+import { LoginRouteGuardService } from './login-route-guard/login-route-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'authenticated', component: WelcomePageComponent, canActivate: [ LoginRouteGuardService ] },
-  { path: '',  redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' }
+  { path: '',  redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -9,7 +9,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 import { AppRoutingModule } from './app-routing.module'
-import { UserService } from "./user.service";
+import { UserService } from "./user-service/user.service";
 
 import {MatButtonModule, MatInputModule} from '@angular/material';
 import { DraggableDirective } from './draggable/draggable.directive';
