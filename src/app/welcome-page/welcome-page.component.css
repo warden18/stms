@@ -28,11 +28,11 @@
 	justify-content: center;
 }
 
-.user-container #username {
+#username {
 	margin-top: 5px;
 }
 
-.user-container #user-img {
+#user-img {
 	top: 10px;
 	border: 1px solid lightgray;
 	padding: 5px;
